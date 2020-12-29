@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow,ipcMain,session } = require('electron');
 const path = require('path');
 
 if (require('electron-squirrel-startup')) { 
@@ -10,6 +10,9 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    webPreferences: {
+      nodeIntegration: true
+    }
   });
 
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
@@ -31,4 +34,8 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+
+
+
 

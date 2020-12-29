@@ -12,29 +12,48 @@
   <div class="cont">
      <div class="registr-container" style="display: none;">
        <form>
+        <div class="alert alert-danger reg-alert" role="alert" style="display: none;">         
+          </div>
          <span>Имя</span>
-         <input type="text" name="name" class="form-control">
+         <input type="text" name="name" id="namereg" class="form-control">
          <span>Email</span>
-         <input type="text" name="email" class="form-control">
+         <input type="text" name="email" id="emailreg" class="form-control">
          <span>Password</span>
-         <input type="text" name="password" class="form-control">
+         <input type="text" name="password" id="passreg" class="form-control">
          <span>Confirm Password</span>
-         <input type="text" name="confrim-password" class="form-control">
-         <div class="btn btn-primary" id="login-change-cont" onclick="loginchangecont()">Login</div>
-         <input type="buttom" class="btn btn-primary btn-block" value="Registr" onclick="insertRegistr()" name="">
+         <input type="text" name="confrim-password" id="confpassreg" class="form-control">
+         <div class="btn btn-primary mt-2" id="login-change-cont" onclick="loginchangecont()">Login</div>
+         <input type="buttom" class="btn btn-primary btn-block mt-2" value="Registr" onclick="insertRegistr()" name="">
        </form>
      </div>
 
      <div class="login-container">
        <form>
+        <div class="alert alert-danger login-alert" role="alert" style="display: none;">         
+        </div>
+
          <span>Email</span>
-         <input type="text" name="email" class="form-control">
+         <input type="text" name="email" class="form-control" id='emailLogin'>
          <span>Password</span>
-         <input type="text" name="password" class="form-control">
-         <div class="btn btn-primary" id="registr-change-cont" onclick="registrchangecont()">Registr</div>
-         <input type="buttom" class="btn btn-primary btn-block" value="login" onclick="insertLogin()" name="">
+         <input type="text" name="password" class="form-control" id='passwordLogin'>
+         <div class="btn btn-primary mt-2" id="registr-change-cont" onclick="registrchangecont()">Registr</div>
+         <input type="buttom" class="btn btn-primary btn-block mt-2" value="login" onclick="insertLogin()" name="">
        </form>
      </div>
+  </div>
+
+
+  <div class="text" style="display: none;">
+    <div class="container-with-message" id="block">
+
+    </div>
+    <div class="containerwithinputs">
+      <form>
+        <textarea class="form-control" id="textarea"></textarea>
+        <input type="button" class="btn btn-primary btn-block mt-2" onclick="send()" value="send" name="">
+        <input type="button" class="btn btn-danger btn-block mt-2" onclick="exit()" value="exit" name="">
+      </form>
+    </div>
   </div>
 
   </body>
